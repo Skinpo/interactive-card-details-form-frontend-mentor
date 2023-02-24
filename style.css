@@ -187,3 +187,8 @@ body {
     margin-left: 390px;
     top: 350px;
 }
+
+/* media querry */
+@media only screen and (max-width: 375px) {
+    
+  }
