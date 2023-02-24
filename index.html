@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <img class="background-image">
+
+        <div class="content-area">
+
+            <form action="">
+                <div class="card-name">
+                    <div class="label">
+                        <label for="name" class="title">Cardholder Name</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="e.g. Jane Appleseed">
+                    </div>
+                </div>
+
+                <div class="card-number">
+                    <div class="label">
+                        <label for="text" class="title">Card Number</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="e.g. 1234 5678 9123 0000">
+                    </div>
+                </div>
+
+                <div class="expiry-date">
+                    <div class="date">
+                        <div class="label">
+                            <label for="text" class="title">Exp. Date (MM/YY)</label>
+                        </div>
+                        <div class="input">
+                            <input type="text" placeholder="MM">
+                            <input  placeholder="YY">
+                        </div>
+                    </div>
+
+                    <div class="cvc">
+                        <div class="label">
+                            <label for="text" class="title">CVC</label>
+                        </div>
+                        <div class="input">
+                            <input type="text" placeholder="e.g. 123">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="confirm">Confirm</button>
+            </form>
+
+            <div class="complete-state">
+                <div class="pass-mark">
+                    <img src="../images/icon-complete.svg" alt="complete-icon">
+                </div>
+                <h2>THANK YOU!</h2>
+                <p>We've added your card details</p>
+                <button class="btn-continue">Continue</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card-image">
+
+        <div class="front-card">
+            <img class="card" src="../images/bg-card-front.png" alt="">
+            
+            <div class="card-details">
+                <img src="../images/card-logo.svg" alt="">
+                <h2>0000 0000 0000 0000</h2>
+                <p>Jane Appleseed <span>00/00</span> </p>
+            </div>
+        </div>
+
+        <div class="back-card">
+            <img src="../images/bg-card-back.png" alt="">
+            
+            <div class="card-details">
+                <p class="cvc-number">000</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
