@@ -71,6 +71,10 @@ body {
     padding-left: 20px;
 }
 
+/* .input input:focus {
+    border: 1px solid var(--red);
+} */
+
 .card-name input, .card-number input {
     width: 100%;
 }
@@ -146,49 +150,158 @@ body {
 /* card style */
 .card-image {
     position: absolute;
-    top: 187px;
+    top: 180px;
     left: 140px;
+    height: 600px;
 }
 
 .front-card .card, .back-card img {
     width: 420px;
 }
 
-.card-details {
-    margin-top: -210px;
-    margin-left: 25px;
+.front-card .card {
+    margin-top: -500px;
+    position: absolute;
 }
 
-.card-details h2 {
+.card-details-front {
+    margin-top: -470px;
+    margin-left: 25px;
+    position: absolute;
+    z-index: 1;
+}
+
+.card-details-front h2 {
     margin-top: 50px;
     letter-spacing: 0.1rem;
     font-size: 1.4rem;
     color: var(--white);
 }
 
-.card-details p, .card-details span {
+.card-details-front p, .card-details-front span {
     margin-top: 25px;
     font-size: 0.8rem;
     text-transform: uppercase;
     color: var(--white);
 }
 
-.card-details span {
+.card-details-front span {
     margin-left: 200px;
 }
 
 .back-card img {
     margin-left: 80px;
-    margin-top: 70px;
+    margin-top: 270px;
+}
+
+.card-details-back {
+    position: absolute;
+    top: 21px;
 }
 
 .cvc-number {
-    position: absolute;
+    position: relative;
     margin-left: 390px;
     top: 350px;
+    color: var(--white);
 }
 
 /* media querry */
 @media only screen and (max-width: 375px) {
-    
+    body {
+        max-width: 375px;
+        margin: 0;
+    }
+
+    .main-container {
+        display: block;
+    }
+
+    .background-image {
+        background-image: url("images/bg-main-mobile.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 375px;
+        height: 240px;
+    }
+
+    .content-area form, .complete-state {
+        margin: 0;
+        max-width: 100%;
+        padding: 90px 30px 0 30px;
+        height: 100px;
+    }
+
+    .front-card .card, .back-card img {
+        width: 285px;
+    }
+
+    .card-image {
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        height: 0px;
+        background-color: aqua;
+    }
+
+    .back-card img {
+        margin-left: 50px;
+        margin-top: 0px;
+    }
+
+    .front-card .card {
+        margin-top: -73px;
+        position: absolute;
+    }
+
+    .card-details-front {
+        margin-top: -50px;
+        margin-left: 20px;
+    }
+
+    .card-details-front h2 {
+        margin-top: 30px;
+        font-size: 0.9rem;
+    }
+
+    .card-details-front p, .card-details-front span {
+        margin-top: 15px;
+        font-size: 0.5rem;
+        text-transform: uppercase;
+        color: var(--white);
+    }
+
+    .card-details-front span {
+        margin-left: 140px;
+    }
+
+    .card-details-front img {
+        width: 50px;
+    }
+
+    .cvc-number {
+        position: relative;
+        margin-left: 270px;
+        top: 50px;
+        font-size: 0.7rem;
+        color: var(--white);
+    }
+
+    .content-area {
+        flex: 0;
+    }
+
+    .date input {
+        max-width: 70px;
+        margin-right: 5px;
+    }
+
+    .cvc {
+        padding-left: 5px;
+    }
+
+    .cvc input {
+        max-width: 150px;
+    }
+
   }
