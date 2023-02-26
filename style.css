@@ -50,7 +50,7 @@ body {
 
 .content-area form {
     text-transform: uppercase;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 .label {
@@ -117,7 +117,7 @@ body {
 /* Complete state starts here */
 
 .complete-state {
-    visibility: hidden;
+    /* visibility: hidden; */
     margin-top: -588px;
 }
 
@@ -302,6 +302,27 @@ body {
 
     .cvc input {
         max-width: 150px;
+    }
+
+    /* complete state */
+
+    .complete-state {
+        height: 0;
+        padding: 0 30px 0 30px;
+    }
+
+    .complete-state img {
+        margin-left: 115px;
+    }
+
+    .pass-mark {
+        position: relative;
+        width: 340px;
+        margin: auto;
+    }
+
+    .complete-state p {
+        margin-bottom: 46px;
     }
 
   }
