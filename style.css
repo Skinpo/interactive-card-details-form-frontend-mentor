@@ -50,7 +50,7 @@ body {
 
 .content-area form {
     text-transform: uppercase;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 .label {
@@ -64,16 +64,13 @@ body {
 }
 
 .input input {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: 1px solid var(--light-grayish-violet);
     height: 44px;
     border-radius: 10px;
     padding-left: 20px;
+    cursor: pointer;
 }
-
-/* .input input:focus {
-    border: 1px solid var(--red);
-} */
 
 .card-name input, .card-number input {
     width: 100%;
@@ -114,10 +111,16 @@ body {
     cursor: pointer;
 }
 
+.error-input, .error-name, .error-exp, .error-cvc {
+    font-size: 0.6rem;
+    color: var(--red);
+    margin-bottom: 10px;
+}
+
 /* Complete state starts here */
 
 .complete-state {
-    /* visibility: hidden; */
+    visibility: hidden;
     margin-top: -588px;
 }
 
@@ -229,7 +232,10 @@ body {
         margin: 0;
         max-width: 100%;
         padding: 90px 30px 0 30px;
-        height: 100px;
+    }
+
+    .content-area form {
+        height: 240px;
     }
 
     .front-card .card, .back-card img {
@@ -307,8 +313,9 @@ body {
     /* complete state */
 
     .complete-state {
-        height: 0;
+        /* height: 0; */
         padding: 0 30px 0 30px;
+        margin-top: -130px;
     }
 
     .complete-state img {
