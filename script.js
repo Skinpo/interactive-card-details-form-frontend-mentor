@@ -1,8 +1,8 @@
-// const fullName = document.querySelector(".name");
-// const number = document.querySelector(".number");
-// const month = document.querySelector(".mm");
-// const year = document.querySelector(".yy");
-// const cvcDigit = document.querySelector(".cvc-digit")
+const fullName = document.querySelector(".name");
+const number = document.querySelector(".number");
+const month = document.querySelector(".mm");
+const year = document.querySelector(".yy");
+const cvcDigit = document.querySelector(".cvc-digit")
 
 // let allInput = [fullName, number, month, year, cvcDigit];
 
@@ -14,6 +14,8 @@
 //         console.log("input");
 //     })
 // })
+
+
 
 
 
