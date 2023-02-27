@@ -21,7 +21,7 @@
                         <label for="name" class="title">Cardholder Name</label>
                     </div>
                     <div class="input">
-                        <input type="text" placeholder="e.g. Jane Appleseed">
+                        <input class="name" type="text" placeholder="e.g. Jane Appleseed">
                     </div>
                     <p class="error-name"></p>
                 </div>
@@ -31,7 +31,7 @@
                         <label for="text" class="title">Card Number</label>
                     </div>
                     <div class="input">
-                        <input type="text" placeholder="e.g. 1234 5678 9123 0000">
+                        <input class="number" type="text" placeholder="e.g. 1234 5678 9123 0000">
                     </div>
                     <p class="error-input"></p>
                 </div>
@@ -41,10 +41,15 @@
                         <div class="label">
                             <label for="text" class="title">Exp. Date (MM/YY)</label>
                         </div>
-                        <div class="input">
-                            <input type="text" placeholder="MM">
-                            <input  placeholder="YY">
+                        <div class="age">
+                            <div class="month input">
+                                <input class="mm" type="text" placeholder="MM">
+                            </div>
+                            <div class="year input">
+                                <input class="yy" type="text" placeholder="YY">
+                            </div>
                         </div>
+                        
                         <p class="error-exp"></p>
                     </div>
 
@@ -53,7 +58,7 @@
                             <label for="text" class="title">CVC</label>
                         </div>
                         <div class="input">
-                            <input type="text" placeholder="e.g. 123">
+                            <input class="cvc-digit" type="text" placeholder="e.g. 123">
                         </div>
                         <p class="error-cvc"></p>
                     </div>
@@ -96,6 +101,8 @@
         </div>
 
     </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
