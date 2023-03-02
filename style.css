@@ -184,6 +184,7 @@ body {
     margin-left: 25px;
     position: absolute;
     z-index: 1;
+    width: 370px;
 }
 
 .card-details-front h2 {
@@ -193,15 +194,19 @@ body {
     color: var(--white);
 }
 
-.card-details-front p, .card-details-front span {
+.card-details-front p {
     margin-top: 25px;
     font-size: 0.8rem;
     text-transform: uppercase;
     color: var(--white);
 }
 
-.card-details-front span {
-    margin-left: 200px;
+.name-date {
+    display: flex;
+}
+
+.namediv {
+    flex: 2;
 }
 
 .back-card img {

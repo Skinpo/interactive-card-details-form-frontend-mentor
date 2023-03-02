@@ -21,7 +21,7 @@
                         <label for="name" class="title">Cardholder Name</label>
                     </div>
                     <div class="input">
-                        <input class="name" type="text" placeholder="e.g. Jane Appleseed">
+                        <input class="name" type="text" placeholder="e.g. Jane Appleseed" maxlength="32">
                     </div>
                     <p class="error-name"></p>
                 </div>
@@ -93,8 +93,15 @@
         <div class="front-card">
             <div class="card-details-front">
                 <img src="../images/card-logo.svg" alt="">
-                <h2>0000 0000 0000 0000</h2>
-                <p>Jane Appleseed <span>00/00</span> </p>
+                <h2 class="card-number">0000 0000 0000 0000</h2>
+                <div class="name-date">
+                    <div class="namediv">
+                        <p class="name-on-card">Jane Appleseed</p>
+                    </div>
+                    <div class="datediv">
+                        <p class="date-format">00/00</p>
+                    </div>
+                </div>
             </div>
 
             <img class="card" src="../images/bg-card-front.png" alt="">
