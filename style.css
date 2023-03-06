@@ -349,4 +349,8 @@ body {
         margin-bottom: 46px;
     }
 
+    .name-date {
+        max-width: 245px;
+    }
+
   }
