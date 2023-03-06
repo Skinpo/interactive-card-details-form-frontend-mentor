@@ -11,32 +11,34 @@ const cardName = document.querySelector(".name-on-card");
 const dateFormat = document.querySelector(".date-format");
 
 
-
-// fullName.addEventListener("input", () => {
-//     const username = fullName.value;
-//     const usernamePattern = /^[a-zA-Z]{0,32}$/;
-//     fullName.style.border = "2px solid #600594";
-//     console.log(usernamePattern.test(username))
-
-//     if (!usernamePattern.test(username)) {
-//         errName.textContent = "Wrong Format, text only";
-//     } else {
-//         errName.textContent = "";
-//     }
-
-//     cardName.innerHTML = username;
-
-// })
-
+// Event listener for the username
 fullName.addEventListener("input", () => {
+    // stores the value in username input in a variable
     const username = fullName.value;
-    const pattern1 = /^[a-zA-Z]{1,12}$/;
-    const pattern2 = /\s/;
-    const pattern3 = /^[a-zA-Z]{1,10}$/
-    const result = username.replace(pattern1, pattern2, pattern3);
-    cardName.textContent = result;
+    // Regex to make sure username takes alphabets only
+    const usernamePattern = /^[A-Za-z\s]*$/;
+    fullName.style.border = "2px solid #600594";
+    // console.log(usernamePattern.test(username))
+
+    // Error message display to alert user when they input a wrong format
+    if (username.match(usernamePattern)) {
+        errName.textContent = "";
+    } else {
+        errName.textContent = "Wrong Format, text only";
+    }
+
+    if (username == "" || username == null) {
+        errName.textContent = ""
+    }
+
+    cardName.innerHTML = username;
+
 })
 
+
+number.addEventListener("input", () => {
+    console.log("working");
+})
 
 
 
