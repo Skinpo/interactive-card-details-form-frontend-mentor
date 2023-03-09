@@ -15,7 +15,7 @@
 
         <div class="content-area">
 
-            <form action="">
+            <form class="form" action="">
                 <div class="card-name">
                     <div class="label">
                         <label for="name" class="title">Cardholder Name</label>
@@ -31,7 +31,7 @@
                         <label for="text" class="title">Card Number</label>
                     </div>
                     <div class="input">
-                        <input class="number" type="text" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
+                        <input class="number" type="text" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
                     </div>
                     <p class="error-input"></p>
                 </div>
@@ -43,10 +43,10 @@
                         </div>
                         <div class="age">
                             <div class="month input">
-                                <input class="mm" type="text" placeholder="MM">
+                                <input class="mm" type="text" placeholder="MM" maxlength="2">
                             </div>
                             <div class="year input">
-                                <input class="yy" type="text" placeholder="YY">
+                                <input class="yy" type="text" placeholder="YY" maxlength="2">
                             </div>
                         </div>
                         
@@ -58,7 +58,7 @@
                             <label for="text" class="title">CVC</label>
                         </div>
                         <div class="input">
-                            <input class="cvc-digit" type="text" placeholder="e.g. 123">
+                            <input class="cvc-digit" type="text" placeholder="e.g. 123" maxlength="3">
                         </div>
                         <p class="error-cvc"></p>
                     </div>
@@ -99,7 +99,11 @@
                         <p class="name-on-card">Jane Appleseed</p>
                     </div>
                     <div class="datediv">
-                        <p class="date-format">00/00</p>
+                        <div class="date-format">
+                            <p class="mo">00</p>
+                            <p>/</p>
+                            <p class="yr">00</p>
+                        </div>
                     </div>
                 </div>
             </div>

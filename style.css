@@ -10,9 +10,9 @@
 
 :root {
     --linear-gradient: #6448fe to #600594;
-    --red: hsl(0, 100%, 66%);
+    --red: #ff5252;
     --white: hsl(0, 0%, 100%);
-    --light-grayish-violet: hsl(270, 3%, 87%);
+    --light-grayish-violet: #dedddf;
     --dark-grayish-violet: hsl(279, 6%, 55%);
     --very-dark-violet: #21092f;
 }
@@ -49,9 +49,9 @@ body {
     padding-left: 110px;
 }
 
-.content-area form {
+.form {
     text-transform: uppercase;
-    /* visibility: hidden; */
+    visibility: visible;
 }
 
 .label {
@@ -224,6 +224,10 @@ body {
     margin-left: 390px;
     top: 350px;
     color: var(--white);
+}
+
+.date-format {
+    display: flex;
 }
 
 /* media querry */
