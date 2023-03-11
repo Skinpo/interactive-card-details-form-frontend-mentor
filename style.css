@@ -122,11 +122,23 @@ body {
     margin-bottom: 20px;
 }
 
-.error-input, .error-name, .error-exp, .error-cvc {
+.error-input, .error-name, .error-exp, .error-cvc, .error-mon {
     font-size: 0.6rem;
     color: var(--red);
     margin-bottom: 10px;
     text-transform: capitalize;
+}
+
+/* .error-exp {
+    margin-top: 10px;
+}
+
+.error-mon {
+    margin-top: -22px;
+} */
+
+.errormessages {
+    background-color: #600594;
 }
 
 /* Complete state starts here */

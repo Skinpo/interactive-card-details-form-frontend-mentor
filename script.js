@@ -6,6 +6,7 @@ const cvcDigit = document.querySelector(".cvc-digit");
 const errName = document.querySelector(".error-name");
 const errInput = document.querySelector(".error-input");
 const errExp = document.querySelector(".error-exp");
+const errMonth = document.querySelector(".error-mon");
 const errCvc = document.querySelector(".error-cvc");
 const cardName = document.querySelector(".name-on-card");
 const monthFormat = document.querySelector(".mo");
@@ -15,169 +16,329 @@ const cvcCard = document.querySelector(".cvc-number");
 const btnConfirm = document.querySelector(".confirm");
 
 
-let holdersNamefun = function () {
 
-    fullName.addEventListener("input", () => {
-        // stores the value in username input in a variable
-         const username = fullName.value;
+// let holdersNamefun = function () {
+//     // validation for card name input field
+//     if (fullName.value.match(/^[A-Za-z\s]*$/)) {
+//         fullName.style.border = "2px solid #600594";
+//         cardName.innerHTML = fullName.value;
+//         errName.textContent = "";
+//     } else {
+//         fullName.style.border = "2px solid #ff5252";
+//         errName.textContent = "Wrong Format, letters only";
+//         cardName.innerHTML = "JANE APPLESEED";
+//     }
+    
+//     if (fullName.value === "" || fullName.value === null) {
+//         fullName.style.border = "2px solid #ff5252";
+//         errName.textContent = "cannot be blank";
+//         cardName.innerHTML = "JANE APPLESEED";
+//     }
+// };
 
-        // Regex to make sure username takes alphabets only
-        const usernamePattern = /^[A-Za-z\s]*$/;
-        
-        // Error message display to alert user when they input a wrong format
-        if (username.match(usernamePattern)) {
-            fullName.style.border = "2px solid #600594";
-            cardName.innerHTML = username;
-            errName.textContent = "";
-        } else {
-            fullName.style.border = "2px solid #ff5252";
-            errName.textContent = "Wrong Format, letters only";
-        }
-        
-        if (username === "" || username === null) {
-            fullName.style.border = "1px solid #dedddf";
-            errName.textContent = "";
-            cardName.innerHTML = "JANE APPLESEED";
-        }
-        
-    })
-};
+// let numInputfun = function () {
+//     // validation for card number input field
+//     if (number.value.match(/^\d+$/g)) {
+//         number.style.border = "2px solid #600594";
+//         errInput.textContent = ""
+//         numOnCard.innerHTML = number.value.match(/.{1,4}/g).join(" ");
+//     } else if (number.value === "" || number.value === null) {
+//         number.style.border = "2px solid #ff5252";
+//         errInput.textContent = "cannot be blank"
+//         numOnCard.innerHTML = "0000 0000 0000 0000";
+//     } else {
+//         number.style.border = "2px solid #ff5252";
+//         errInput.textContent = "Wrong Format, numbers only";
+//     }
 
-let numInputfun = function () {
+//     if (number.value.match(/^[0-9]{1,15}$/)) {
+//         number.style.border = "2px solid #ff5252";
+//         errInput.textContent = "must be 16 digits"
+//         numOnCard.innerHTML = "0000 0000 0000 0000";
+//     }
 
-    number.addEventListener("input", () => {
-        const userNumber = number.value;
-        const pattern2 = /^\d+$/g;
-
-        if (userNumber.match(pattern2)) {
-            number.style.border = "2px solid #600594";
-            errInput.textContent = ""
-            numOnCard.innerHTML = userNumber.match(/.{1,4}/g).join(" ");
-        } else {
-            number.style.border = "2px solid #ff5252";
-            errInput.textContent = "Wrong Format, numbers only";
-        }
-
-        if (userNumber === "" || userNumber === null) {
-            number.style.border = "1px solid #dedddf";
-            errInput.textContent = ""
-            numOnCard.innerHTML = "0000 0000 0000 0000";
-        }
-    })
-
-};
-
-let dateFormatfun = function () {
-
-    month.addEventListener("input", () => {
-        const pattern3 = /^[0-9]{2}$/;
-
-        if (month.value.match(pattern3)) {
-            month.style.border = "2px solid #600594";
-            errExp.textContent = "" 
-            monthFormat.innerHTML = month.value;
-        } else {
-            errExp.textContent = "";
-            month.style.border = "2px solid #ff5252"; 
-            monthFormat.innerHTML = "00" 
-        }
-
-        if (month.value == "" || month.value == null) {
-            month.style.border = "2px solid #ff5252";
-            errExp.textContent = "Can't be blank";
-            monthFormat.innerHTML = "00"
-        }
-
-    })
+// };
 
 
-    year.addEventListener("input", () => {
-        const pattern4 = /^[0-9]{2}$/;
 
-        if (year.value.match(pattern4)) {
-            year.style.border = "2px solid #600594";
-            errExp.textContent = "" 
-            yearFormat.innerHTML = year.value;
-        } else {
-            year.style.border = "2px solid #ff5252";
-            errExp.textContent = ""; 
-            yearFormat.innerHTML = "00" 
-        }
+// let monthFormatfun = function () {
+//     //validation for month input 
+//     if (month.value.match(/^[0-9]{2}$/)) {
+//         month.style.border = "2px solid #600594";
+//         errMonth.textContent = "" 
+//         monthFormat.innerHTML = month.value;
+//     } else if (month.value === "" || month.value === null) {
+//         month.style.border = "2px solid #ff5252";
+//         errMonth.textContent = "Can't be blank";
+//         monthFormat.innerHTML = "00"
+//     } else {
+//         errMonth.textContent = "";
+//         month.style.border = "2px solid #ff5252"; 
+//         monthFormat.innerHTML = "00"
+//     }
+// };
 
-        if (year.value == "" || year.value == null) {
-            year.style.border = "2px solid #ff5252";
-            errExp.textContent = "Can't be blank";
-            yearFormat.innerHTML = "00"
-        }
+// let yearFormatfun = function () {
+//     if (year.value.match(/^[0-9]{2}$/)) {
+//         year.style.border = "2px solid #600594";
+//         errExp.textContent = "" 
+//         yearFormat.innerHTML = year.value;
+//     } else if (year.value == "" || year.value == null) {
+//         year.style.border = "2px solid #ff5252";
+//         errExp.textContent = "Can't be blank";
+//         yearFormat.innerHTML = "00"
+//     } else {
+//         year.style.border = "2px solid #ff5252";
+//         errExp.textContent = "";
+//         yearFormat.innerHTML = "00"
+//     }
 
-    })
+// };
 
-};
+// let cvcfun = function () {
+//     if (cvcDigit.value.match(/^[0-9]{3}$/)) {
+//         cvcDigit.style.border = "2px solid #600594";
+//         errCvc.textContent = "" 
+//         cvcCard.innerHTML = cvcDigit.value;
+//     } else if (cvcDigit.value == "" || cvcDigit.value == null) {
+//         cvcDigit.style.border = "2px solid #ff5252";
+//         errCvc.textContent = "Can't be blank";
+//         cvcCard.innerHTML = "000"
+//     } else {
+//         errCvc.textContent = "";
+//         cvcDigit.style.border = "2px solid #ff5252"; 
+//         cvcCard.innerHTML = "000" 
+//     }
+// };
 
-let cvcfun = function () {
-    cvcDigit.addEventListener("input", () => {
-        const pattern4 = /^[0-9]{3}$/;
 
-        if (cvcDigit.value.match(pattern4)) {
-            cvcDigit.style.border = "2px solid #600594";
-            errCvc.textContent = "" 
-            cvcCard.innerHTML = cvcDigit.value;
-        } else {
-            errCvc.textContent = "";
-            cvcDigit.style.border = "2px solid #ff5252"; 
-            cvcCard.innerHTML = "000" 
-        }
 
-        if (cvcDigit.value == "" || cvcDigit.value == null) {
-            cvcDigit.style.border = "2px solid #ff5252";
-            errCvc.textContent = "Can't be blank";
-            cvcCard.innerHTML = "000"
-        }
-    })
-};
+cvcDigit.addEventListener("keyup", () => {
+    cvcDigit.style.border = "2px solid #600594";
+    errCvc.textContent = "" 
+    cvcCard.innerHTML = cvcDigit.value;
+});
 
-    holdersNamefun();
-    numInputfun();
-    dateFormatfun();
-    cvcfun();
+year.addEventListener("keyup", () => {
+    year.style.border = "2px solid #600594";
+    errExp.textContent = "" 
+    yearFormat.innerHTML = year.value;
+});
 
-    let allfun = [holdersNamefun, numInputfun, dateFormatfun, cvcfun]
+month.addEventListener("keyup", () => {
+    month.style.border = "2px solid #600594";
+    errMonth.textContent = "" 
+    monthFormat.innerHTML = month.value;
+});
+
+number.addEventListener("keyup", () => {
+    number.style.border = "2px solid #600594";
+    errInput.textContent = ""
+    numOnCard.innerHTML = number.value.match(/.{1,4}/g).join(" ");
+});
+
+fullName.addEventListener("keyup", () => {
+    fullName.style.border = "2px solid #600594";
+    cardName.innerHTML = fullName.value;
+    errName.textContent = "";
+});
+
+// let handleSubmit = function() {
+
+//     if (fullName.value.match(/^[A-Za-z\s]*$/)) {
+//         fullName.style.border = "2px solid #600594";
+//         cardName.innerHTML = fullName.value;
+//         errName.textContent = "";
+//     } else {
+//         fullName.style.border = "2px solid #ff5252";
+//         errName.textContent = "Wrong Format, letters only";
+//         cardName.innerHTML = "JANE APPLESEED";
+//     }
+    
+//     if (fullName.value === "" || fullName.value === null) {
+//         fullName.style.border = "2px solid #ff5252";
+//         errName.textContent = "cannot be blank";
+//         cardName.innerHTML = "JANE APPLESEED";
+//     }
+
+//     let numInputfun = function () {
+//         // validation for card number input field
+//         if (number.value.match(/^\d+$/g)) {
+//             number.style.border = "2px solid #600594";
+//             errInput.textContent = ""
+//             numOnCard.innerHTML = number.value.match(/.{1,4}/g).join(" ");
+//         } else if (number.value === "" || number.value === null) {
+//             number.style.border = "2px solid #ff5252";
+//             errInput.textContent = "cannot be blank"
+//             numOnCard.innerHTML = "0000 0000 0000 0000";
+//         } else {
+//             number.style.border = "2px solid #ff5252";
+//             errInput.textContent = "Wrong Format, numbers only";
+//         }
+    
+//         if (number.value.match(/^[0-9]{1,15}$/)) {
+//             number.style.border = "2px solid #ff5252";
+//             errInput.textContent = "must be 16 digits"
+//             numOnCard.innerHTML = "0000 0000 0000 0000";
+//         }
+    
+//     };
+
+//     let monthFormatfun = function () {
+//         //validation for month input 
+//         if (month.value.match(/^[0-9]{2}$/)) {
+//             month.style.border = "2px solid #600594";
+//             errMonth.textContent = "" 
+//             monthFormat.innerHTML = month.value;
+//         } else if (month.value === "" || month.value === null) {
+//             month.style.border = "2px solid #ff5252";
+//             errMonth.textContent = "Can't be blank";
+//             monthFormat.innerHTML = "00"
+//         } else {
+//             errMonth.textContent = "";
+//             month.style.border = "2px solid #ff5252"; 
+//             monthFormat.innerHTML = "00"
+//         }
+//     };
+
+//     let yearFormatfun = function () {
+//         if (year.value.match(/^[0-9]{2}$/)) {
+//             year.style.border = "2px solid #600594";
+//             errExp.textContent = "" 
+//             yearFormat.innerHTML = year.value;
+//         } else if (year.value == "" || year.value == null) {
+//             year.style.border = "2px solid #ff5252";
+//             errExp.textContent = "Can't be blank";
+//             yearFormat.innerHTML = "00"
+//         } else {
+//             year.style.border = "2px solid #ff5252";
+//             errExp.textContent = "";
+//             yearFormat.innerHTML = "00"
+//         }
+    
+//     };
+
+//     let cvcfun = function () {
+//         if (cvcDigit.value.match(/^[0-9]{3}$/)) {
+//             cvcDigit.style.border = "2px solid #600594";
+//             errCvc.textContent = "" 
+//             cvcCard.innerHTML = cvcDigit.value;
+//         } else if (cvcDigit.value == "" || cvcDigit.value == null) {
+//             cvcDigit.style.border = "2px solid #ff5252";
+//             errCvc.textContent = "Can't be blank";
+//             cvcCard.innerHTML = "000"
+//         } else {
+//             errCvc.textContent = "";
+//             cvcDigit.style.border = "2px solid #ff5252"; 
+//             cvcCard.innerHTML = "000" 
+//         }
+//     };
+
+    
+
+
+
+
+    
+// }
+
+
+
+
+
+
+
+
+
+
+const handleSubmit = function() {
+
+    if (fullName.value.match(/^[A-Za-z\s]*$/)) {
+        fullName.style.border = "2px solid #600594";
+        cardName.innerHTML = fullName.value;
+        errName.textContent = "";
+    } else {
+        fullName.style.border = "2px solid #ff5252";
+        errName.textContent = "Wrong Format, letters only";
+        cardName.innerHTML = "JANE APPLESEED";
+    }
+    
+    if (fullName.value === "" || fullName.value === null) {
+        fullName.style.border = "2px solid #ff5252";
+        errName.textContent = "cannot be blank";
+        cardName.innerHTML = "JANE APPLESEED";
+    }
+
+    if (number.value.match(/^\d+$/g)) {
+        number.style.border = "2px solid #600594";
+        errInput.textContent = ""
+        numOnCard.innerHTML = number.value.match(/.{1,4}/g).join(" ");
+    } else if (number.value === "" || number.value === null) {
+        number.style.border = "2px solid #ff5252";
+        errInput.textContent = "cannot be blank"
+        numOnCard.innerHTML = "0000 0000 0000 0000";
+    } else {
+        number.style.border = "2px solid #ff5252";
+        errInput.textContent = "Wrong Format, numbers only";
+    }
+
+    if (number.value.match(/^[0-9]{1,15}$/)) {
+        number.style.border = "2px solid #ff5252";
+        errInput.textContent = "must be 16 digits"
+        numOnCard.innerHTML = "0000 0000 0000 0000";
+    }
+
+    if (month.value.match(/^[0-9]{2}$/)) {
+        month.style.border = "2px solid #600594";
+        errMonth.textContent = "" 
+        monthFormat.innerHTML = month.value;
+    } else if (month.value === "" || month.value === null) {
+        month.style.border = "2px solid #ff5252";
+        errMonth.textContent = "Can't be blank";
+        monthFormat.innerHTML = "00"
+    } else {
+        errMonth.textContent = "";
+        month.style.border = "2px solid #ff5252"; 
+        monthFormat.innerHTML = "00"
+    }
+
+    if (year.value.match(/^[0-9]{2}$/)) {
+        year.style.border = "2px solid #600594";
+        errExp.textContent = "" 
+        yearFormat.innerHTML = year.value;
+    } else if (year.value == "" || year.value == null) {
+        year.style.border = "2px solid #ff5252";
+        errExp.textContent = "Can't be blank";
+        yearFormat.innerHTML = "00"
+    } else {
+        year.style.border = "2px solid #ff5252";
+        errExp.textContent = "";
+        yearFormat.innerHTML = "00"
+    }
+
+    if (cvcDigit.value.match(/^[0-9]{3}$/)) {
+        cvcDigit.style.border = "2px solid #600594";
+        errCvc.textContent = "" 
+        cvcCard.innerHTML = cvcDigit.value;
+    } else if (cvcDigit.value == "" || cvcDigit.value == null) {
+        cvcDigit.style.border = "2px solid #ff5252";
+        errCvc.textContent = "Can't be blank";
+        cvcCard.innerHTML = "000"
+    } else {
+        errCvc.textContent = "";
+        cvcDigit.style.border = "2px solid #ff5252"; 
+        cvcCard.innerHTML = "000" 
+    }
+    
+}
 
 
 btnConfirm.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("do");
     
-    // holdersNamefun();
-    // numInputfun();
-    // dateFormatfun();
-    // cvcfun();
-
-    // const thankYou = document.querySelector(".complete-state");
-    // const form = document.querySelector(".form");
-    // form.style.visibility = "hidden"
-    // thankYou.style.visibility = "visible";
-
-    if (allfun === true) {
-        console.log("true");
+    if (handleSubmit()) {
+        console.log("yes");
     } else {
-        console.log("false");
+        console.log("no");
     }
-        
-        // const thankYou = document.querySelector(".complete-state");
-        // const form = document.querySelector(".form");
-        // holdersNamefun();
-        // numInputfun();
-        // dateFormatfun();
-        // cvcfun();
-        // form.style.visibility = "hidden"
-        // thankYou.style.visibility = "visible";
-    
-})
-
-
-
-
-
-
-
+});
