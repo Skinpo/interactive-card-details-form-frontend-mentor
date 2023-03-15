@@ -129,14 +129,6 @@ body {
     text-transform: capitalize;
 }
 
-/* .error-exp {
-    margin-top: 10px;
-}
-
-.error-mon {
-    margin-top: -22px;
-} */
-
 .errormessages {
     background-color: #600594;
 }
@@ -340,7 +332,11 @@ body {
     }
 
     .cvc input {
-        max-width: 150px;
+        max-width: 100%;
+    }
+
+    .cvc .input {
+        max-width: 158px;
     }
 
     /* complete state */
